@@ -1,24 +1,9 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import {
     MaterialReactTable,
     useMaterialReactTable,
 } from 'material-react-table';
-
-const ReadMore = ({ text }) => {
-    const maxLength = 50;
-    const [showFullText, setShowFullText] = useState(false);
-
-    if (text.length <= maxLength) return <span>{text}</span>;
-
-    return (
-        <span>
-            {showFullText ? text : `${text.substring(0, maxLength)}...`}
-            <button onClick={() => setShowFullText(!showFullText)}>
-                {showFullText ? 'Read less' : 'Read more'}
-            </button>
-        </span>
-    );
-};
+import ReadMore from '../components/ReadMore';
 
 const data = [
     {
